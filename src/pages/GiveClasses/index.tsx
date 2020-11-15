@@ -1,8 +1,40 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { View } from 'react-native';
+import { ImageBackground, View, Text } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
+
+import GiveClassesBgImage from '../../assets/images/give-classes-background.png'
+
+import styles from './styles'
 
 function GiveClass() {
-    return <View />
+
+    const {goBack} = useNavigation()
+
+    function handleNavigateBack() {
+        goBack();
+    }
+
+    return (
+        <View style={styles.container}>
+            <ImageBackground 
+                resizeMode="contain" 
+                source={GiveClassesBgImage} 
+                style={styles.content}
+            >
+                <Text style={styles.title}>Quer ser um Proffy?</Text>
+                <Text style={styles.description}>
+                    Para começar você deve se cadastrar na nossa plataforma web.
+                </Text>
+
+            </ImageBackground>
+
+            <RectButton onPress={handleNavigateBack} style={styles.okButton}>
+                <Text style={styles.okButtonText}>Tudo bem</Text>
+            </RectButton>
+
+        </View>
+    )
 }
 
 export default GiveClass
