@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {ScrollView, TextInput, View, Text} from 'react-native';
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
@@ -10,6 +10,7 @@ import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
 
 import styles from './styles'
+import { useFocusEffect } from '@react-navigation/native';
 
 
 // todo, usar um select para escolher a materia, dia da semana, horario.
@@ -25,7 +26,8 @@ function TeacherList() {
     const [week_day, setWeekDay] = useState('')
     const [time, setTime] = useState('')
 
-    useEffect( () => {
+
+    function loadFavorites() {
         AsyncStorage.getItem("favorites").then( res => {
             // o res é recebido em texto, pois todos os dados salvos no asyncstorage são salvos assim
             if (res) {
@@ -38,7 +40,7 @@ function TeacherList() {
                 setFavorites(favoritedTeachersIds)
             }
         });
-    }, [])
+    }
 
 
     function handleToggleFilterVisible() {
@@ -46,6 +48,9 @@ function TeacherList() {
     }
 
     async function handleFiltersSubmit() {
+
+        loadFavorites()
+
         const res = await api.get('classes', {
             params: {
                 subject,
