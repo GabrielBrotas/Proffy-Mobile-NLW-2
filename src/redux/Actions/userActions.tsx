@@ -11,13 +11,13 @@ interface DecodedTokenProps {
     user: Object
 }
 
-export const loginUser = (userData: Object, history: HistoryProps) => (dispatch: Function) => {
+export const loginUser = (userData: Object, navigate: Function) => (dispatch: Function) => {
     api.post('/login', userData)
         .then( res => {
             dispatch({type: CLEAR_ERRORS})
             setAuthorizationHeader(res.data.token)            
             dispatch(getUserData(res.data.token))
-            history.push('/')
+            navigate('Landing')
         })
         .catch( err => {
             dispatch({
@@ -43,11 +43,10 @@ export const loginUser = (userData: Object, history: HistoryProps) => (dispatch:
 //         })
 // }
 
-// export const logoutUser = () => (dispatch: Function) => {
-//     localStorage.removeItem('LSIdToken');
-//     dispatch({type: SET_UNAUTHENTICATED});
-    
-// }
+export const logoutUser = () => (dispatch: Function) => {
+    AsyncStorage.removeItem('LSIdToken');
+    dispatch({type: SET_UNAUTHENTICATED});   
+}
 
 export const getUserData = (token: string) => (dispatch: Function) => {
     const decodedToken: DecodedTokenProps = jwtDecode(token);

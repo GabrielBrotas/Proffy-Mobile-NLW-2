@@ -18,9 +18,7 @@ const { Navigator, Screen} = createStackNavigator()
 function AppStack() {
 
     const {authenticated} = useSelector( (state: StateProps) => state.users )
-
     console.log(authenticated)
-
     return (
         <NavigationContainer>
             <Navigator screenOptions={{headerShown: false}}>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {View, Image, Text} from 'react-native';
 import { useNavigation} from '@react-navigation/native'
-import {RectButton} from 'react-native-gesture-handler'
+import {RectButton, TouchableHighlight} from 'react-native-gesture-handler'
 
 import styles from './styles'
 
@@ -13,11 +13,17 @@ import profileImg from '../../assets/images/profile.jpg'
 import returnIcon from '../../assets/images/icons/return.png'
 
 import api from '../../services/api';
+import { useDispatch, useSelector } from 'react-redux';
+import { StateProps } from '../../redux/store';
+import { logoutUser } from '../../redux/Actions/userActions';
 
 function Landing() {
     const {navigate} = useNavigation();
+    const dispatch = useDispatch();
 
     const [totalConnections, setTotalConnections] = useState(0)
+
+    const {credentials} = useSelector( (state: StateProps) => state.users)
 
     useEffect( () => {
         api.get('/connections').then( res => {
@@ -34,15 +40,24 @@ function Landing() {
         navigate('Study')
     }   
 
+    function handleLogoutUser() {
+        dispatch(logoutUser())
+    }
+
     return (
         <View style={styles.container}>
 
            <View style={styles.headerContent}>
-                <View style={styles.profileContent}>
-                    <Image source={profileImg} style={styles.profileImg} />
-                    <Text style={styles.userName}>Warren Buffet</Text>
+                <View style={styles.profileContainer}>
+                    <View style={styles.profileContent}>
+                        <Image source={profileImg} style={styles.profileImg} />
+                        <Text style={styles.userName}>{credentials.name}</Text>
+                    </View>
 
-                    <Image source={returnIcon} style={styles.backIcon} />
+                    <TouchableHighlight style={styles.backIconContent} onPress={handleLogoutUser}>
+                        <Image style={styles.backIcon} source={returnIcon} />
+                    </TouchableHighlight>
+                    
                 </View>
                 
                 <Image source={landingImg} style={styles.banner} />

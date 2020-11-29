@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     title: {
         fontFamily: "Poppins_600SemiBold",
         fontSize: 25,
-        marginBottom: 20
+        marginBottom: 10
     },
     textInput: {
         height: 54,
@@ -38,13 +38,15 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         justifyContent: 'center',
         paddingHorizontal: 16,
-        marginTop: 4,
-        marginBottom: 16
+        marginTop: 15,
+        marginBottom: 4
     },
     loginOptions: {
         flexDirection: 'row',
         justifyContent: "space-between",
         alignItems: 'center',
+        marginBottom: 10,
+        marginTop: 10
     },
     checkBox: {
         margin: 0,
@@ -57,6 +59,10 @@ const styles = StyleSheet.create({
        },
     span: {
         color: '#6A6180'
+    },
+    errorMessage: {
+        color: "red",
+        textAlign: "left",
     },
     submitButton: {
         backgroundColor: "#04d361",

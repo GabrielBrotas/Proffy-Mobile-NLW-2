@@ -7,10 +7,16 @@ import { useNavigation } from '@react-navigation/native'
 import logoImg from '../../assets/images/logo.png'
 
 import styles from './styles'
+import { useDispatch, useSelector } from 'react-redux'
+import { loginUser } from '../../redux/Actions/userActions'
+import { StateProps } from '../../redux/store'
 
 function Login() {
 
     const {navigate} = useNavigation();
+    const dispatch = useDispatch();
+
+    const {errors} = useSelector( (state: StateProps) => state.users)
 
     const [rememberLogin, setRememberLogin] = useState(false);
     const [email, setEmail] = useState('');
@@ -18,6 +24,11 @@ function Login() {
 
     function handleNavigateToRegister() {
         navigate('StepOne')
+    }
+
+    function handleLoginUser() {
+        const userData = {email, password};
+        dispatch(loginUser(userData, navigate));
     }
 
     return (
@@ -40,12 +51,15 @@ function Login() {
                         value={email}
                         onChangeText={e => setEmail(e)}
                     />
+                    {errors.email && <Text style={styles.errorMessage}>* {errors.email}</Text>}
                     <TextInput 
                         placeholder="Password"
                         style={styles.textInput}
                         value={password}
                         onChangeText={e => setPassword(e)}
+                        secureTextEntry
                     />
+                    {errors.password && <Text style={styles.errorMessage}>* {errors.password}</Text>}
 
                     <View style={styles.loginOptions}>
                         <CheckBox
@@ -58,8 +72,10 @@ function Login() {
                         />
                         <Text style={styles.span} onPress={handleNavigateToRegister}>Ainda não tem conta ?</Text>
                     </View>
-
-                    <RectButton style={styles.submitButton}>
+                    
+                    {errors.error && <Text style={styles.errorMessage}>* {errors.error}</Text>}
+                    
+                    <RectButton style={styles.submitButton} onPress={handleLoginUser}>
                         <Text style={styles.buttonText}>Enviar</Text>
                     </RectButton>
                 </View>

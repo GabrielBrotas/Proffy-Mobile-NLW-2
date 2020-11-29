@@ -8,18 +8,31 @@ const styles = StyleSheet.create({
         backgroundColor: '#8257E5',
         padding: 20
     },
-    profileContent: {
+    profileContainer: {
         flexDirection: 'row',
         alignItems: 'center',
         marginBottom: 10,
         marginTop: 10,
         height: 50,
+        justifyContent: 'space-between'
+    },
+    profileContent: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    },
+    backIconContent: {
+        flexDirection: 'row',
+        marginLeft: 'auto',
+        width: 50,
+        height: 40,
+        borderRadius: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
     },
     backIcon: {
-        marginLeft: 'auto',
         width: 20,
         height: 20,
-        marginRight: 10
     },
     profileImg: {
         width: 40,
