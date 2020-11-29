@@ -1,7 +1,7 @@
 import {createStore, combineReducers, compose, applyMiddleware} from 'redux'
 import thunk from 'redux-thunk'
-import classesReducer from './reducers/classesReducer'
-import userReducers from './reducers/userReducer'
+import classesReducer from './Reducers/classesReducer'
+import userReducers from './Reducers/userReducer'
 
 export interface StateProps {
     users: {
