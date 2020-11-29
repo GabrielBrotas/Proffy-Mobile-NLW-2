@@ -1,22 +1,25 @@
 import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
+    hideContent: {
+        display: 'none'
+    },
     logoContent: {
-        height: 300,
+        height: '40%',
         width: "100%",
         backgroundColor: "#8257e5",
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
     },
     logo: {
-        width: 200,
-        height: 60,
-        resizeMode: "contain"
+        width: '100%',
+        height: '20%',
+        resizeMode: "contain",
     },
     logoText: {
         paddingTop: 10,
         color: "#ffffff",
-        fontFamily: "Poppins_400Regular"
+        fontFamily: "Poppins_400Regular",
     },
     mainContent: {
         flex: 1,
@@ -50,8 +53,8 @@ const styles = StyleSheet.create({
     },
     checkBoxText: {
         color: '#6A6180',
-        fontFamily: "Archivo_400Regular"
-    },
+        fontFamily: "Archivo_400Regular", 
+       },
     span: {
         color: '#6A6180'
     },

@@ -1,12 +1,12 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 
-function Register() {
+function Finished() {
     return (
         <View>
-            <Text>Register</Text>
+            <Text>Finished</Text>
         </View>
     )
 }
 
-export default Register
+export default Finished

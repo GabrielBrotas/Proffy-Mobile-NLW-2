@@ -42,7 +42,6 @@ function TeacherList() {
         });
     }
 
-
     function handleToggleFilterVisible() {
         setIsFiltersVisible(!isFiltersVisible)
     }
