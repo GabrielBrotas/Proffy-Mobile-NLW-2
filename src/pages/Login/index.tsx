@@ -10,19 +10,14 @@ import styles from './styles'
 
 function Login() {
 
-    const {navigate} = useNavigation()
+    const {navigate} = useNavigation();
 
-    const [rememberLogin, setRememberLogin] = useState(false)
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [hideContentOnKeyboarShow, setHideContentOnKeyboarShow] = useState(false)
+    const [rememberLogin, setRememberLogin] = useState(false);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     function handleNavigateToRegister() {
-        navigate('Register')
-    }
-
-    function handleContentHide() {
-        setHideContentOnKeyboarShow(!hideContentOnKeyboarShow)
+        navigate('StepOne')
     }
 
     return (

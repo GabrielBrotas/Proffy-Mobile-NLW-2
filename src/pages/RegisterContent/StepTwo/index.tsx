@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { View, Text, Image, TextInput, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard} from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
 
-import backIcon from '../../assets/images/icons/back.png'
+import backIcon from '../../../assets/images/icons/back.png'
 
 import styles from './styles'
 
@@ -20,8 +20,8 @@ function StepTwo() {
 
     function handleSubmit() {
         reset({
-            index: 0,
-            routes: [{name: 'RegisterContent'}, {name: "Finished"}]
+            index:1,
+            routes: [{name: "RegisterFinished"}]
           });
     }
 
