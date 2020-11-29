@@ -3,19 +3,47 @@ import {StyleSheet} from 'react-native'
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+    },
+    headerContent: {
         backgroundColor: '#8257E5',
-        padding: 40
+        padding: 20
+    },
+    profileContent: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 10,
+        marginTop: 10,
+        height: 50,
+    },
+    backIcon: {
+        marginLeft: 'auto',
+        width: 20,
+        height: 20,
+        marginRight: 10
+    },
+    profileImg: {
+        width: 40,
+        height: 40,
+        borderRadius: 50,
+        marginRight: 10,
+        marginLeft: 10
+    },
+    userName: {
+        color: "#fff",
+        fontSize: 15
     },
     banner: {
         width: '100%',
         resizeMode: 'contain'
     },
+    mainContent: {
+        flex: 1,
+        padding: 20
+    },
     title: {
-        color: "#fff",
+        color: "#6A6180",
         fontSize: 20,
         lineHeight: 30,
-        marginTop: 80,
         fontFamily: 'Poppins_400Regular'
     },
     titleBold: {
@@ -47,7 +75,7 @@ const styles = StyleSheet.create({
     },
     totalConnections: {
         fontFamily: 'Poppins_400Regular',
-        color: "#d4c2ff",
+        color: "#6A6180",
         fontSize: 12,
         lineHeight: 20,
         maxWidth: 400,

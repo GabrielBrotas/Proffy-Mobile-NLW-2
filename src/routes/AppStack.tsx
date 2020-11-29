@@ -17,11 +17,11 @@ function AppStack() {
     return (
         <NavigationContainer>
             <Navigator screenOptions={{headerShown: false}}>
+                <Screen name="Landing" component={Landing} />
                 <Screen name="Login" component={Login} />
                 <Screen name="StepOne" component={StepOne} />
                 <Screen name="StepTwo" component={StepTwo} />
                 <Screen name="RegisterFinished" component={RegisterFinished} />
-                <Screen name="Landing" component={Landing} />
                 <Screen name="GiveClasses" component={GiveClass} />
                 <Screen name="Study" component={StudyTabs} />
             </Navigator>
