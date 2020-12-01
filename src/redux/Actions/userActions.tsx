@@ -1,4 +1,5 @@
 import AsyncStorage from "@react-native-community/async-storage"
+import {NavigationActions} from 'react-navigation'
 import jwtDecode from 'jwt-decode'
 import api from "../../services/api"
 import { CLEAR_ERRORS, SET_ERRORS, SET_AUTHENTICATION, SET_UNAUTHENTICATED } from "../types"
@@ -35,7 +36,6 @@ export const checkIfNameAndEmailExists = (userData: Object, navigate: Function) 
             navigate('StepTwo', userData)
         })
         .catch( err => {
-            console.log('err = ', err.response.data)
             dispatch({
                 type: SET_ERRORS,
                 payload: err.response.data
@@ -46,13 +46,12 @@ export const checkIfNameAndEmailExists = (userData: Object, navigate: Function) 
 export const registerUser = (userData: Object, reset: Function) => (dispatch: Function) => {
     api.post('/user', userData)
         .then( res => {
+            reset({
+                index: 0, 
+                routes: [{name: "RegisterFinished"}]
+            })
             setAuthorizationHeader(res.data.token)
             dispatch({type: CLEAR_ERRORS})
-            dispatch(getUserData(res.data.token))
-            reset({
-                index: 0,
-                routes: [{name: 'RegisterFinished'}]
-            })
         })
         .catch( err => {
             dispatch({
