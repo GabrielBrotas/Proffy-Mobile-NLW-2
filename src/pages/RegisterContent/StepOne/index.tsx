@@ -5,7 +5,7 @@ import { RectButton } from 'react-native-gesture-handler'
 import { useDispatch, useSelector } from 'react-redux'
 
 import backIcon from '../../../assets/images/icons/back.png'
-import { checkIfNameAndEmailExists, registerUser } from '../../../redux/Actions/userActions'
+import { checkIfNameAndEmailExists } from '../../../redux/Actions/userActions'
 import { StateProps } from '../../../redux/store'
 import { CLEAR_ERRORS } from '../../../redux/types'
 

@@ -31,9 +31,11 @@ export const checkIfNameAndEmailExists = (userData: Object, navigate: Function) 
     api.post('/checkUser', userData)
         .then( () => {
             dispatch({type: CLEAR_ERRORS})
+
             navigate('StepTwo', userData)
         })
         .catch( err => {
+            console.log('err = ', err.response.data)
             dispatch({
                 type: SET_ERRORS,
                 payload: err.response.data
@@ -48,12 +50,11 @@ export const registerUser = (userData: Object, reset: Function) => (dispatch: Fu
             dispatch({type: CLEAR_ERRORS})
             dispatch(getUserData(res.data.token))
             reset({
-                index:1,
-                routes: [{name: "RegisterFinished"}]
-              });
+                index: 0,
+                routes: [{name: 'RegisterFinished'}]
+            })
         })
         .catch( err => {
-            console.log(err.response.data)
             dispatch({
                 type: SET_ERRORS,
                 payload: err.response.data

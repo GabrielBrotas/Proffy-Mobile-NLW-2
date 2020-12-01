@@ -42,7 +42,6 @@ function StepTwo({route}: StepTwoRoute) {
         userData.password = password;
         userData.confirmPassword = confirmPassword;
         dispatch(registerUser(userData, reset))
-        
     }
 
     useEffect( () => {
