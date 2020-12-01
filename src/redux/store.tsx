@@ -17,7 +17,8 @@ export interface StateProps {
             name?: string,
             email?: string,
             error?: string,
-            password?: string
+            password?: string,
+            from?: string,
         }
     },
     classes: {

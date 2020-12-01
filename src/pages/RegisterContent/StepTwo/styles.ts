@@ -39,6 +39,9 @@ const styles = StyleSheet.create({
         marginTop: 4,
         marginBottom: 5
     },
+    errorMessage: {
+        color: 'red'
+    },
     submitButton: {
         backgroundColor: "#04d361",
         height: 56,

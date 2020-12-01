@@ -27,21 +27,39 @@ export const loginUser = (userData: Object, navigate: Function) => (dispatch: Fu
         })
 }
 
-// export const registerUser = (userData: Object, history: HistoryProps) => (dispatch: Function) => {
-//     api.post('/user', userData)
-//         .then( res => {
-//             setAuthorizationHeader(res.data.token)
-//             dispatch({type: CLEAR_ERRORS})
-//             dispatch(getUserData(res.data.token))
-//             history.push('/')
-//         })
-//         .catch( err => {
-//             dispatch({
-//                 type: SET_ERRORS,
-//                 payload: err.response.data
-//             })
-//         })
-// }
+export const checkIfNameAndEmailExists = (userData: Object, navigate: Function) => (dispatch: Function) => {
+    api.post('/checkUser', userData)
+        .then( () => {
+            dispatch({type: CLEAR_ERRORS})
+            navigate('StepTwo', userData)
+        })
+        .catch( err => {
+            dispatch({
+                type: SET_ERRORS,
+                payload: err.response.data
+            })
+        })
+}
+
+export const registerUser = (userData: Object, reset: Function) => (dispatch: Function) => {
+    api.post('/user', userData)
+        .then( res => {
+            setAuthorizationHeader(res.data.token)
+            dispatch({type: CLEAR_ERRORS})
+            dispatch(getUserData(res.data.token))
+            reset({
+                index:1,
+                routes: [{name: "RegisterFinished"}]
+              });
+        })
+        .catch( err => {
+            console.log(err.response.data)
+            dispatch({
+                type: SET_ERRORS,
+                payload: err.response.data
+            })
+        })
+}
 
 export const logoutUser = () => (dispatch: Function) => {
     AsyncStorage.removeItem('LSIdToken');

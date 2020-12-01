@@ -2,14 +2,12 @@ import {StyleSheet} from 'react-native'
 
 const styles = StyleSheet.create({
     pageContent: {
-        flex: 1,
         paddingLeft: 30,
-        paddingRight: 30
+        paddingRight: 30,
     },
     backIcon: {
         marginTop: 40,
         marginLeft: 20,
-        position: 'relative',
         borderRadius: 50,
         width: 50,
         height: 50,
@@ -35,8 +33,12 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         justifyContent: 'center',
         paddingHorizontal: 16,
-        marginTop: 4,
+        marginTop: 5,
         marginBottom: 5
+    },
+    spanError: {
+        color: "red",
+        marginBottom: 4
     },
     submitButton: {
         backgroundColor: "#04d361",

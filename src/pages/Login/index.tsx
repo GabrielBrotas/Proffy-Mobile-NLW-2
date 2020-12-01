@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { View, Text, Image, TextInput, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, Platform} from 'react-native'
 import { RectButton } from 'react-native-gesture-handler'
 import {CheckBox} from 'react-native-elements'
@@ -10,6 +10,7 @@ import styles from './styles'
 import { useDispatch, useSelector } from 'react-redux'
 import { loginUser } from '../../redux/Actions/userActions'
 import { StateProps } from '../../redux/store'
+import { CLEAR_ERRORS } from '../../redux/types'
 
 function Login() {
 
@@ -31,6 +32,10 @@ function Login() {
         dispatch(loginUser(userData, navigate));
     }
 
+    useEffect( () => {
+        dispatch({type: CLEAR_ERRORS})
+    }, [])
+
     return (
         <KeyboardAvoidingView
             enabled
@@ -51,7 +56,7 @@ function Login() {
                         value={email}
                         onChangeText={e => setEmail(e)}
                     />
-                    {errors.email && <Text style={styles.errorMessage}>* {errors.email}</Text>}
+                    {errors.email && errors.from !== "register" && <Text style={styles.errorMessage}>* {errors.email}</Text>}
                     <TextInput 
                         placeholder="Password"
                         style={styles.textInput}
