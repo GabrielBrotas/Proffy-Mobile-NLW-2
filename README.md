@@ -12,25 +12,17 @@ This project was made using the follow technologies:
 
 ## Images
 
-### Landing
-The user just can access the landing if is authenticated, then he will have access to the options availible in the app.
-<br />
-  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/landing.PNG" width="200px" />
-
-### Login / Register
-  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/login.PNG" width="200px" />
-
-### Teacher List 
 <div style={{display: "flex"}}>
+  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/landing.PNG" width="200px" />
+  &nbsp
+  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/login.PNG" width="200px" />
+  &nbsp
   <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-list.PNG" width="200px" />
   &nbsp
   <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-list-2.PNG" width="200px" />
-</div>
-  
-  
-### Filter
+  &nbsp
   <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-filter.PNG" width="200px" />
-
+</div>
 ## 💻 How to Run;
 In the currenct folder install the dependencies
   >yarn install
