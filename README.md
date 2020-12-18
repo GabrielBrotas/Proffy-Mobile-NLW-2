@@ -5,10 +5,10 @@ The goal in this app is to create connections between the professionals and peop
 
 ## 💻 Technologies
 This project was made using the follow technologies:
-  >React Native;
-  >Expo;
-  >TypeScript;
-  >Redux;
+  >React Native; <br /> 
+  >Expo; <br />
+  >TypeScript; <br />
+  >Redux; <br />
 
 ## Images
 
