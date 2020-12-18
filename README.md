@@ -1,4 +1,8 @@
 
+<div>
+  <img source="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/logo.png" alt="logo" />
+</div>
+
 ## 🚀 About 
 This is the mobile version 2.0 of the Proffy App using React Native and TypeScrit, where the user can register a account, log in and have two options, become a Proffy or take classes by one of our Proffys.
 The goal in this app is to create connections between the professionals and people that want to learn about some subject.
