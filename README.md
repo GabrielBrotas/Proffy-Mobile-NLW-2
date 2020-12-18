@@ -8,6 +8,7 @@ The goal in this app is to create connections between the professionals and peop
 
 ### Landing
 The user just can access the landing if is authenticated, then he will have access to the options availible in the app.
+<br />
   <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/landing.PNG" width="200px" />
 
 ### Login / Register
@@ -16,7 +17,8 @@ The user just can access the landing if is authenticated, then he will have acce
 ### Teacher List 
 <div style={{display: "flex"}}>
   <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-list.PNG" width="200px" />
-  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-list-2.PNG" width="200px" style={{margin-left: "20px"}} />
+  &nbsp
+  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-list-2.PNG" width="200px" />
 </div>
   
   
