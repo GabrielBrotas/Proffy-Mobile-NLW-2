@@ -30,3 +30,10 @@ The user just can access the landing if is authenticated, then he will have acce
   
 ### Filter
   <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-filter.PNG" width="200px" />
+
+## 💻 How to Run;
+In the currenct folder install the dependencies
+  >yarn install
+
+Run Application
+  >yarn start
