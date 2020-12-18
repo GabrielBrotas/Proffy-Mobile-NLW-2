@@ -13,16 +13,19 @@ This project was made using the follow technologies:
 ## Images
 
 <div style={{display: "flex"}}>
-  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/landing.PNG" width="200px" />
+  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/landing.PNG" width="150px" />
   &nbsp
-  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/login.PNG" width="200px" />
+  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/login.PNG" width="150px" />
   &nbsp
-  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-list.PNG" width="200px" />
+  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-list.PNG" width="150px" />
   &nbsp
-  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-list-2.PNG" width="200px" />
+  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-list-2.PNG" width="150px" />
   &nbsp
-  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-filter.PNG" width="200px" />
+  <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-filter.PNG" width="150px" />
 </div>
+
+<br />
+
 ## 💻 How to Run;
 In the currenct folder install the dependencies
   >yarn install
