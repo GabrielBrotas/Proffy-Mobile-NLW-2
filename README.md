@@ -25,7 +25,6 @@ This project was made using the follow technologies:
   &nbsp
   <img src="https://github.com/GabrielBrotas/Proffy-Mobile-NLW-2/blob/master/images/proffy-filter.PNG" width="150px" />
 </div>
-
 <br />
 
 ## 💻 How to Run;
